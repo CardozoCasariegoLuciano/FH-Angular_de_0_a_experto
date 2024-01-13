@@ -1,0 +1,16 @@
+<form (ngSubmit)="sabeCharacter()">
+  <h4>Agregar personaje</h4>
+  <input
+    placeholder="Nombre"
+    [(ngModel)]="character.name"
+    name="name"
+    type="text"
+  />
+  <input
+    placeholder="Poder"
+    [(ngModel)]="character.power"
+    name="power"
+    type="number"
+  />
+  <input type="submit" value="Crear" />
+</form>

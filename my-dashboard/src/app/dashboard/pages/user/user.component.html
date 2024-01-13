@@ -1,0 +1,9 @@
+<app-title [titulo]="titleLabel()" />
+
+@if (user()) {
+<section>
+  <img [srcset]="user()!.avatar" [alt]="user()!.first_name" />
+</section>
+}@else {
+<p>Loading</p>
+}

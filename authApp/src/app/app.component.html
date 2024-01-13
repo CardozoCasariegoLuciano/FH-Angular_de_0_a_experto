@@ -1,0 +1,5 @@
+<router-outlet *ngIf="finishAuthCheck(); else loading"></router-outlet>
+
+<ng-template #loading>
+  <h1>Loading</h1>
+</ng-template>

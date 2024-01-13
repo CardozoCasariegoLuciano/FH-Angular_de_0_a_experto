@@ -1,0 +1,64 @@
+<app-title titulo="Control flow" withShadow />
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">If: {{ showContent() }}</h2>
+    <button
+      class="p-2 bg-blue-500 rounded text-white"
+      (click)="changeIfValue()"
+    >
+      Click me
+    </button>
+
+    @if (showContent()) {
+    <h2>Contenido</h2>
+    } @else {
+    <h2>****************</h2>
+    }
+  </div>
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">Switch {{ grade() }}</h2>
+    @switch (grade()) { @case ("A") {
+    <p>Arriba de 90</p>
+    } @case ("B") {
+    <p>Entre 80 y 90</p>
+    } @case ("C") {
+    <p>Entre 70 y 80</p>
+    } @case ("D") {
+    <p>Reprobado</p>
+    } }
+    <button class="p-2 bg-blue-500 rounded text-white" (click)="nextGrade()">
+      Click me
+    </button>
+  </div>
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">
+      For: items {{ frameworks().length }}
+    </h2>
+    <ul>
+      @for (item of frameworks(); track $index) {
+      <li>Framework: {{ item }}</li>
+      }@empty {
+      <p>No hay nada en esta lista</p>
+      }
+    </ul>
+    <button class="p-2 bg-blue-500 rounded text-white" (click)="moveToLists()">
+      Click me
+    </button>
+  </div>
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">
+      For: items {{ frameworks2().length }}
+    </h2>
+    <ul>
+      @for (item of frameworks2(); track $index) {
+      <li>Framework: {{ item }}</li>
+      }@empty {
+      <p>No hay nada en esta lista</p>
+      }
+    </ul>
+    <button class="p-2 bg-blue-500 rounded text-white" (click)="moveToLists()">
+      Click me
+    </button>
+  </div>
+</section>

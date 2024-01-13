@@ -1,0 +1,28 @@
+<h1>Info del usuairo</h1>
+<hr />
+
+<div class="row">
+  <div class="col-4">
+    <h3>Usuario actual: {{ userID() }}</h3>
+    <button (click)="loadUser(this.userID() - 1)" class="btn btn-primary mx-2">
+      Anterior
+    </button>
+    <button (click)="loadUser(this.userID() + 1)" class="btn btn-primary">
+      Siguiente
+    </button>
+  </div>
+
+  <div class="col-8" *ngIf="wasFound(); else notFound">
+    <h3>Usuario</h3>
+    <p>Email: {{ this.user()?.email }}</p>
+    <p>First name: {{ this.user()?.first_name }}</p>
+    <p>Last name: {{ this.user()?.last_name }}</p>
+    <img [src]="this.user()?.avatar" alt="Avatar" class="rounded" />
+  </div>
+
+  <ng-template #notFound>
+    <div class="col-8 text-danger">
+      <h3>Usuario no encontrado</h3>
+    </div>
+  </ng-template>
+</div>

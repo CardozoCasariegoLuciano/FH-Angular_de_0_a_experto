@@ -1,0 +1,15 @@
+<section class="grid grid-cols-1">
+  @defer (on viewport) {
+  <app-heavy-loaders-slow cssClass="bg-green-500" />
+  }@placeholder {
+  <p [style]="{ height: '600px' }">Espera mientras se carga el contenido</p>
+  } @defer (on viewport) {
+  <app-heavy-loaders-slow cssClass="bg-purple-500" />
+  }@placeholder {
+  <p [style]="{ height: '600px' }">Espera mientras se carga el contenido</p>
+  } @defer (on viewport) {
+  <app-heavy-loaders-slow cssClass="bg-blue-500" />
+  }@placeholder {
+  <p [style]="{ height: '600px' }">Espera mientras se carga el contenido</p>
+  }
+</section>
